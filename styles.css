@@ -1,0 +1,423 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    cursor: none;
+}
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #FFFFFF; /* Changed from #0a0a0a to white */
+    color: #000000;
+    font-family: 'Courier New', monospace;
+    line-height: 1.6;
+    overflow-x: hidden;
+
+}
+
+/* Custom Cursor Styles */
+.custom-cursor {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #cf1027;
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+}
+
+.cursor-trail {
+    width: 10px;
+    height: 10px;
+    background: #cf1027;
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 9998;
+}
+
+/* Landing Section */
+.landing {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.glitch-text {
+    font-size: 4rem;
+    font-weight: bold;
+    position: relative;
+    color: #000000; /* Changed from original color to black */
+    text-shadow: 2px 2px #cf1027; /* Changed text shadow to red (#cf1027) */
+    animation: glitch 1s infinite;
+}
+
+/* Glitch Animation */
+@keyframes glitch {
+    0% {
+        transform: translate(0);
+    }
+    20% {
+        transform: translate(-2px, 2px);
+    }
+    40% {
+        transform: translate(-2px, -2px);
+    }
+    60% {
+        transform: translate(2px, 2px);
+    }
+    80% {
+        transform: translate(2px, -2px);
+    }
+    100% {
+        transform: translate(0);
+    }
+}
+
+/* Matrix Rain Background */
+.matrix-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.matrix-column {
+    position: absolute;
+    font-size: 1.2rem;
+    line-height: 1;
+    white-space: nowrap;
+    animation: fall linear infinite;
+    color: rgba(50, 50, 50, 0.2); /* Changed from green to dark grey with low opacity */
+}
+
+/* Fall Animation */
+@keyframes fall {
+    from {
+        transform: translateY(-100%);
+    }
+    to {
+        transform: translateY(100vh);
+    }
+}
+
+/* FAQ Section */
+.faq {
+    min-height: 100vh;
+    padding: 4rem 2rem;
+    background: #FFFFFF; /* Changed from #0a0a0a to white for consistency */
+}
+
+.faq h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+}
+
+.faq-item {
+    max-width: 800px;
+    margin: 0 auto 2rem;
+    padding: 1rem;
+    border: 1px solid #cf1027;
+    transition: all 0.3s ease;
+}
+
+.faq-item:hover {
+    transform: translateX(10px);
+}
+
+.faq-question {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.faq-answer {
+    color: #666666;
+}
+
+/* Navbar Styles */
+.navbar {
+    width: 100%;
+    padding: 1rem 2rem;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    opacity: 0;
+    transform: translateY(-100%);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+/* Visible state for the navbar */
+.navbar.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.navbar-logo .logo {
+    width: 130px; 
+}
+
+.navbar-links {
+    list-style: none;
+    display: flex;
+    gap: 4.5rem;
+}
+
+.navbar-links li a {
+    text-decoration: none;
+    color: #000000;
+    font-weight: bold;
+    transition: color 0.3s ease;
+    font-size: 32px;
+}
+
+.navbar-links li a:hover {
+    color: #cf1027; /* Highlight color on hover */
+}
+
+
+.bsides-flag {
+    width: 500px;
+    height: 500px;
+    object-fit: cover;
+    margin-bottom: 2rem;
+}
+
+/* Social Media Icons */
+.social-media {
+  position: relative;
+  z-index: 2;
+  margin-top: 40px; /* Increased margin-top */
+  display: flex;
+  justify-content: center;
+  gap: 60px; /* Increased gap between icons */
+}
+
+.social-media .icon {
+  text-align: center;
+}
+
+.social-media .icon a {
+  text-decoration: none;
+  color: #000;
+  transition: color 0.3s, transform 0.3s;
+}
+
+.social-media .icon i {
+  font-size: 3.5em; /* Increased from 2.5em */
+}
+
+.social-media .icon p {
+  margin-top: 12px; /* Slightly increased margin-top */
+  font-size: 1.2em; /* Increased from 1em */
+}
+
+.social-media .icon a:hover {
+  color: #cf1027;
+  transform: translateY(-8px); /* Slightly increased translateY */
+}
+
+/* Team Section Styles */
+.team {
+    min-height: 90vh;
+    padding: 8rem 2rem;
+    background: #f9f9f9;
+    text-align: center;
+}
+
+.team h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+/* Carousel Container */
+.carousel-container {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+/* Carousel */
+.carousel {
+    display: flex;
+    animation: scroll 20s linear infinite;
+    /* Ensure the carousel is wide enough */
+    width: calc(250px * 10 + 20px * 10); /* Example: 10 items with 20px gaps */
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%); /* Adjust based on duplicated items */
+    }
+}
+
+/* Pause Animation on Hover */
+.carousel-container:hover .carousel {
+    animation-play-state: paused;
+}
+
+/* Carousel Items */
+.carousel-item {
+    flex: 0 0 auto;
+    width: 250px;
+    height: 300px;
+    margin: 0 20px;
+    background: #ffffff;
+    border: 1px solid #cccccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    box-sizing: border-box;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+.carousel-item h3 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.carousel-item p {
+    font-size: 1rem;
+    color: #555555;
+}
+
+
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .carousel-item {
+        width: 200px;
+        height: 280px;
+        margin: 0 5px;
+    }
+}
+
+@media (max-width: 480px) {
+    .carousel-item {
+        width: 150px;
+        height: 260px;
+        margin: 0 5px;
+    }
+
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .carousel-container {
+        max-width: 1000px; /* Adjust as needed */
+    }
+}
+
+@media (max-width: 480px) {
+    .carousel-container {
+        max-width: 800px; /* Adjust as needed */
+    }
+}
+
+
+/* Contact Section */
+.contact {
+    min-height:90vh;
+    padding: 4rem 2rem 2rem 0;
+    background: #ffffff;
+    text-align: center;
+}
+
+.contact h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Contact Form Styles */
+.contact-form {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    border: 1px solid #cf1027;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form .form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.5rem;
+}
+
+.contact-form label {
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: #000000;
+    font-size: 1.5rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-family: 'Courier New', monospace;
+    resize: vertical;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: #cf1027;
+    box-shadow: 0 0 5px #cf1027;
+}
+
+.submit-button {
+    padding: 0.75rem 1.5rem;
+    background-color: #cf1027;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+    background-color: #Ff0027;
+}
